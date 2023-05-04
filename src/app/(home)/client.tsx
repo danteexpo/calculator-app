@@ -1,15 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import Form from './components/Form';
-import cotizaciones from './cotizaciones.json';
+import Form from '../components/Form';
 
-const COTIZACIONES = cotizaciones as Record<
-  string,
-  { compra: number; venta: number }
->;
-
-export default function Home() {
+export default function HomeClient({
+  cotizaciones,
+}: {
+  cotizaciones: Record<string, { compra: number; venta: number }>;
+}) {
   const [amount, setAmount] = useState(0);
 
   return (
@@ -17,7 +15,7 @@ export default function Home() {
       <Form value={amount} onChange={(_amount: number) => setAmount(_amount)} />
       <section className="bg-[#00474B] text-white rounded-xl p-2 sm:p-4 overflow-y-auto">
         <ul className="flex flex-col gap-4">
-          {Object.entries(COTIZACIONES).map(
+          {Object.entries(cotizaciones).map(
             ([name, value]: [string, { compra: number; venta: number }]) => {
               const total = amount ? Number(amount / value.venta) : value.venta;
               return (
