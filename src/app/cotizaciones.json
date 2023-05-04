@@ -1,0 +1,14 @@
+{
+  "Dólar Oficial": {
+    "compra": 199.50,
+    "venta": 205.50
+  },
+  "Dólar Blue" : {
+    "compra": 420.00,
+    "venta": 425.00
+  },
+  "Dólar MEP": {
+    "compra": 415.50,
+    "venta": 420.50
+  }
+}
